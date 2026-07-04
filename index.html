@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Robert E. Suter — 73-year-old author writing from a nursing home in NJ. Five heartfelt books written with honesty, humor, and heart.">
+<meta property="og:title" content="Robert E. Suter — Author">
+<meta property="og:description" content="Five heartfelt books written with honesty, humor, and heart from a nursing home in NJ.">
+<meta property="og:type" content="website">
+<title>Robert E. Suter — Author</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  :root {
+    --navy: #1a2a4a;
+    --gold: #d4a849;
+    --cream: #f7f3ed;
+    --dark: #0f1825;
+    --text: #2a2a2a;
+    --light-text: #666;
+  }
+  
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--navy) 100%);
+    color: white;
+    padding: 60px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(212,168,73,0.08) 0%, transparent 60%);
+    animation: drift 20s ease-in-out infinite;
+  }
+  
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-30px, 20px); }
+  }
+  
+  .hero-content { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  
+  .hero .tagline {
+    color: var(--gold);
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+  
+  .hero .story {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.8;
+  }
+  
+  .hero-cta {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    padding: 14px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(212,168,73,0.4);
+  }
+  
+  .hero-cta:active { transform: scale(0.95); }
+  
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 36px;
+    flex-wrap: wrap;
+  }
+  
+  .stat { text-align: center; }
+  .stat .num { font-size: 1.8rem; color: var(--gold); font-weight: bold; }
+  .stat .label { font-size: 0.8rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+  
+  /* BOOKS SECTION */
+  .section { padding: 50px 20px; max-width: 700px; margin: 0 auto; }
+  
+  .section-title {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  
+  .section-sub {
+    text-align: center;
+    color: var(--light-text);
+    font-size: 0.95rem;
+    margin-bottom: 36px;
+    font-style: italic;
+  }
+  
+  .book-card {
+    display: flex;
+    gap: 20px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .book-card:active { transform: scale(0.98); }
+  
+  .book-cover {
+    width: 100px;
+    min-width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  .book-info { flex: 1; }
+  
+  .book-title { font-size: 1.2rem; color: var(--navy); margin-bottom: 4px; }
+  .book-price { color: var(--gold); font-weight: bold; font-size: 0.9rem; font-family: Arial, sans-serif; margin-bottom: 8px; }
+  .book-desc { font-size: 0.9rem; color: #555; margin-bottom: 14px; line-height: 1.6; }
+  
+  .book-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+  
+  .btn-buy {
+    background: var(--navy);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: background 0.2s;
+  }
+  
+  .btn-buy:active { background: var(--dark); }
+  
+  .btn-preview {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+    padding: 8px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+  }
+  
+  .series-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  
+  /* QUIZ */
+  .quiz-section {
+    background: var(--navy);
+    color: white;
+    padding: 50px 20px;
+  }
+  
+  .quiz-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .quiz-title {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+  
+  .quiz-sub {
+    text-align: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+  
+  .quiz-screen { display: none; }
+  .quiz-screen.active { display: block; }
+  
+  .quiz-question {
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .quiz-options { display: flex; flex-direction: column; gap: 12px; }
+  
+  .quiz-option {
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.15);
+    color: white;
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: Georgia, serif;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+  }
+  
+  .quiz-option:active {
+    background: var(--gold);
+    color: var(--dark);
+    border-color: var(--gold);
+    transform: scale(0.98);
+  }
+  
+  .quiz-progress {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .quiz-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+  }
+  
+  .quiz-dot.done { background: var(--gold); }
+  
+  /* QUIZ RESULT */
+  .result-card {
+    background: white;
+    border-radius: 14px;
+    padding: 30px 20px;
+    text-align: center;
+    color: var(--text);
+  }
+  
+  .result-card img {
+    width: 130px;
+    height: 195px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    margin-bottom: 16px;
+  }
+  
+  .result-card .result-label {
+    color: var(--gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .result-card h3 { font-size: 1.3rem; color: var(--navy); margin-bottom: 10px; }
+  .result-card p { font-size: 0.95rem; color: #555; margin-bottom: 20px; line-height: 1.6; }
+  
+  .result-card .btn-buy { display: inline-block; }
+  
+  .quiz-restart {
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    border: none;
+    font-size: 0.85rem;
+    font-family: Georgia, serif;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* ABOUT */
+  .about-section {
+    background: white;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .about-section .section-title { margin-bottom: 20px; }
+  
+  .about-text {
+    max-width: 480px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+  }
+  
+  .about-text .highlight { color: var(--navy); font-weight: bold; }
+  
+  /* SHARE */
+  .share-section {
+    background: var(--cream);
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .share-btn {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    transition: transform 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .share-btn:active { transform: scale(0.9); }
+  .share-btn.fb { background: #1877f2; }
+  .share-btn.tw { background: #000; }
+  .share-btn.email { background: var(--navy); }
+  .share-btn.copy { background: var(--gold); color: var(--dark); }
+  
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.85rem;
+  }
+  
+  footer a { color: var(--gold); text-decoration: none; }
+  
+  /* BUNDLE BANNER */
+  .bundle-banner {
+    background: linear-gradient(135deg, var(--gold) 0%, #c4962f 100%);
+    color: var(--dark);
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .bundle-banner .bundle-text { font-size: 1rem; font-weight: bold; }
+  .bundle-banner .bundle-link { font-size: 0.85rem; text-decoration: underline; margin-top: 4px; display: block; color: var(--dark); }
+  
+  @media (max-width: 380px) {
+    .hero h1 { font-size: 1.8rem; }
+    .book-cover { width: 80px; min-width: 80px; height: 120px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Robert E. Suter</h1>
+    <p class="tagline">Stories from the heart, written from a nursing home in New Jersey</p>
+    <p class="story">
+      At 73, living with CIDP, Bob Suter turned to storytelling. The result?
+      Five heartfelt books that blend honesty, humor, and the kind of wisdom
+      that only comes from a life fully lived. No gimmicks. Just damn good stories.
+    </p>
+    <a href="#books" class="hero-cta">Explore the Books</a>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">5</div><div class="label">Books</div></div>
+      <div class="stat"><div class="num">3</div><div class="label">Series</div></div>
+      <div class="stat"><div class="num">$3.99</div><div class="label">Starting At</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- BUNDLE BANNER -->
+<div class="bundle-banner">
+  <div class="bundle-text">Get all 5 books at the eBook store</div>
+  <a href="https://resuter51-ops.github.io/ebook-store/" class="bundle-link">Visit the Store &#8594;</a>
+</div>
+
+<!-- BOOKS -->
+<div class="section" id="books">
+  <h2 class="section-title">The Collection</h2>
+  <p class="section-sub">Five stories. One unforgettable voice.</p>
+
+  <!-- Happiness Finds Big Man -->
+  <div class="book-card">
+    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/d88ad9ebf_happiness-finds-big-man.png" alt="Happiness Finds Big Man cover">
+    <div class="book-info">
+      <div class="book-title">Happiness Finds Big Man</div>
+      <div class="book-price">$3.99</div>
+      <div class="book-desc">A big man with a big heart finds happiness in the most unexpected places. A feel-good story that proves joy doesn't care about your size, your situation, or what anyone else thinks.</div>
+      <div class="book-buttons">
+        <a href="https://books2read.com/u/4Nnw8G" class="btn-buy" target="_blank">Buy Now</a>
+        <a href="https://resuter51-ops.github.io/ebook-store/" class="btn-preview" target="_blank">eBook Store</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Valley Fair -->
+  <div class="book-card">
+    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/cf5a926a2_4d4ec6ea3_Just-Another-Typical-Day-in-Valley-Fair-original.jpg" alt="Just Another Typical Day in Valley Fair cover">
+    <div class="book-info">
+      <div class="book-title">Just Another Typical Day in Valley Fair</div>
+      <div class="book-price">$4.99</div>
+      <div class="book-desc">Small town. Big drama. One day changes everything. A slice-of-life story that captures the humor, heartbreak, and hidden depths of an ordinary American town.</div>
+      <div class="book-buttons">
+        <a href="https://books2read.com/u/47APQg" class="btn-buy" target="_blank">Buy Now</a>
+        <a href="https://resuter51-ops.github.io/ebook-store/" class="btn-preview" target="_blank">eBook Store</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Salvager 1 -->
+  <div class="book-card">
+    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/bcb204f95_410e0021d_TheSalvagerSeriesBook1_cover_corrected.jpg" alt="The Salvager Book 1 cover">
+    <div class="book-info">
+      <span class="series-badge">Series &#183; Book 1</span>
+      <div class="book-title">The Salvager: The Sisters' Plea</div>
+      <div class="book-price">$4.99</div>
+      <div class="book-desc">Two sisters. One desperate plea. A salvager who can't say no. The adventure begins with a simple job that turns into something far more dangerous &#8212; and far more personal.</div>
+      <div class="book-buttons">
+        <a href="https://books2read.com/u/4XVjp7" class="btn-buy" target="_blank">Buy Now</a>
+        <a href="https://resuter51-ops.github.io/ebook-store/" class="btn-preview" target="_blank">eBook Store</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Salvager 2 -->
+  <div class="book-card">
+    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/2d74d72ed_94c74cf2d_Bookd2d-2-The-Runaway-Daughter-original.jpg" alt="The Salvager Book 2 cover">
+    <div class="book-info">
+      <span class="series-badge">Series &#183; Book 2</span>
+      <div class="book-title">The Salvager: The Runaway Daughter</div>
+      <div class="book-price">$4.99</div>
+      <div class="book-desc">She ran from everything. Now someone's bringing her back. The salvager's next job hits closer to home as secrets unravel and the stakes get deadlier.</div>
+      <div class="book-buttons">
+        <a href="https://books2read.com/u/49gV6w" class="btn-buy" target="_blank">Buy Now</a>
+        <a href="https://resuter51-ops.github.io/ebook-store/" class="btn-preview" target="_blank">eBook Store</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Salvager 3 -->
+  <div class="book-card">
+    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/ece74695b_tmp_salvager3.jpg" alt="The Salvager Book 3 cover">
+    <div class="book-info">
+      <span class="series-badge">Series &#183; Book 3</span>
+      <div class="book-title">The Salvager: The Network</div>
+      <div class="book-price">$4.99</div>
+      <div class="book-desc">The truth was never supposed to get out. Now there's no stopping it. The thrilling conclusion to The Salvager series &#8212; where every connection comes with a cost.</div>
+      <div class="book-buttons">
+        <a href="https://books2read.com/u/4AW08p" class="btn-buy" target="_blank">Buy Now</a>
+        <a href="https://resuter51-ops.github.io/ebook-store/" class="btn-preview" target="_blank">eBook Store</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div class="quiz-section" id="quiz">
+  <div class="quiz-container">
+    <h2 class="quiz-title">Find Your Next Read</h2>
+    <p class="quiz-sub">Answer 4 quick questions and I'll match you with the perfect book</p>
+
+    <!-- Q1 -->
+    <div class="quiz-screen active" id="q1">
+      <div class="quiz-progress">
+        <div class="quiz-dot done"></div>
+        <div class="quiz-dot"></div>
+        <div class="quiz-dot"></div>
+        <div class="quiz-dot"></div>
+      </div>
+      <div class="quiz-question">What are you in the mood for?</div>
+      <div class="quiz-options">
+        <button class="quiz-option" onclick="answer(1, 'heartwarming')">A feel-good, heartwarming story</button>
+        <button class="quiz-option" onclick="answer(1, 'smalltown')">Small town drama with humor</button>
+        <button class="quiz-option" onclick="answer(1, 'adventure')">An adventure with twists</button>
+        <button class="quiz-option" onclick="answer(1, 'mystery')">A mystery that keeps me guessing</button>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="quiz-screen" id="q2">
+      <div class="quiz-progress">
+        <div class="quiz-dot done"></div>
+        <div class="quiz-dot done"></div>
+        <div class="quiz-dot"></div>
+        <div class="quiz-dot"></div>
+      </div>
+      <div class="quiz-question">What themes pull you in?</div>
+      <div class="quiz-options">
+        <button class="quiz-option" onclick="answer(2, 'happiness')">Finding happiness in unlikely places</button>
+        <button class="quiz-option" onclick="answer(2, 'ordinary')">Extraordinary depth in ordinary life</button>
+        <button class="quiz-option" onclick="answer(2, 'secrets')">Family secrets and hidden truths</button>
+        <button class="quiz-option" onclick="answer(2, 'survival')">Survival against the odds</button>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="quiz-screen" id="q3">
+      <div class="quiz-progress">
+        <div class="quiz-dot done"></div>
+        <div class="quiz-dot done"></div>
+        <div class="quiz-dot done"></div>
+        <div class="quiz-dot"></div>
+      </div>
+      <div class="quiz-question">How do you like your stories?</div>
+      <div class="quiz-options">
+        <button class="quiz-option" onclick="answer(3, 'standalone')">One and done &#8212; standalone books</button>
+        <button class="quiz-option" onclick="answer(3, 'series')">I love a series I can binge</button>
+        <button class="quiz-option" onclick="answer(3, 'either')">Either way, just make it good</button>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="quiz-screen" id="q4">
+      <div class="quiz-progress">
+        <div class="quiz-dot done"></div>
+        <div class="quiz-dot done"></div>
+        <div class="quiz-dot done"></div>
+        <div class="quiz-dot done"></div>
+      </div>
+      <div class="quiz-question">What's your ideal reading length?</div>
+      <div class="quiz-options">
+        <button class="quiz-option" onclick="answer(4, 'short')">Short and sweet &#8212; under 200 pages</button>
+        <button class="quiz-option" onclick="answer(4, 'medium')">Medium &#8212; a solid afternoon read</button>
+        <button class="quiz-option" onclick="answer(4, 'long')">Long and immersive &#8212; I want to live in it</button>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="quiz-screen" id="result">
+      <div class="result-card" id="resultCard">
+        <!-- filled by JS -->
+      </div>
+      <button class="quiz-restart" onclick="restartQuiz()">&#8592; Take the quiz again</button>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="about-section">
+  <h2 class="section-title">About the Author</h2>
+  <p class="about-text">
+    <span class="highlight">Robert E. Suter</span> is a 73-year-old author writing from a nursing home in New Jersey.
+    Living with CIDP (Chronic Inflammatory Demyelinating Polyneuropathy), he turned to storytelling &#8212;
+    proving that it's never too late to chase a passion. His five books span heartwarming fiction,
+    small-town drama, and a three-part adventure series, all written with the honesty, humor, and heart
+    that come from a life fully lived.
+  </p>
+</div>
+
+<!-- SHARE -->
+<div class="share-section">
+  <p style="font-size: 0.95rem; color: var(--light-text);">Know someone who'd love these books? Share!</p>
+  <div class="share-buttons">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://resuter51-ops.github.io/author-landing/" class="share-btn fb" target="_blank">f</a>
+    <a href="https://twitter.com/intent/tweet?text=Check out these books by Robert E. Suter&url=https://resuter51-ops.github.io/author-landing/" class="share-btn tw" target="_blank">X</a>
+    <a href="mailto:?subject=Books by R.E. Suter&body=Check out these books: https://resuter51-ops.github.io/author-landing/" class="share-btn email">&#9993;</a>
+    <button class="share-btn copy" onclick="copyLink()">&#128279;</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&#169; 2026 Robert E. Suter &#183; <a href="https://www.facebook.com/share/p/18pFa6t6DP/">Facebook</a> &#183; <a href="https://resuter51-ops.github.io/ebook-store/">eBook Store</a></p>
+  <p style="margin-top:8px; font-size:0.75rem;">Words &amp; Wheels &#183; wordsandwheels.net</p>
+</footer>
+
+<script>
+var answers = {};
+
+function answer(qNum, value) {
+  answers[qNum] = value;
+  document.getElementById('q' + qNum).classList.remove('active');
+  if (qNum < 4) {
+    document.getElementById('q' + (qNum + 1)).classList.add('active');
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  var scores = { happiness: 0, valleyfair: 0, salvager1: 0 };
+
+  if (answers[1] === 'heartwarming') scores.happiness += 3;
+  else if (answers[1] === 'smalltown') scores.valleyfair += 3;
+  else if (answers[1] === 'adventure') scores.salvager1 += 3;
+  else if (answers[1] === 'mystery') scores.salvager1 += 2;
+
+  if (answers[2] === 'happiness') scores.happiness += 3;
+  else if (answers[2] === 'ordinary') scores.valleyfair += 3;
+  else if (answers[2] === 'secrets') { scores.salvager1 += 2; scores.valleyfair += 1; }
+  else if (answers[2] === 'survival') scores.salvager1 += 3;
+
+  if (answers[3] === 'standalone') { scores.happiness += 2; scores.valleyfair += 2; }
+  else if (answers[3] === 'series') scores.salvager1 += 3;
+  else { scores.happiness += 1; scores.valleyfair += 1; scores.salvager1 += 1; }
+
+  if (answers[4] === 'short') scores.happiness += 2;
+  else if (answers[4] === 'medium') { scores.valleyfair += 2; scores.happiness += 1; }
+  else scores.salvager1 += 2;
+
+  var winner = 'happiness';
+  var max = 0;
+  for (var key in scores) {
+    if (scores[key] > max) { max = scores[key]; winner = key; }
+  }
+
+  var books = {
+    happiness: {
+      title: 'Happiness Finds Big Man',
+      cover: 'https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/d88ad9ebf_happiness-finds-big-man.png',
+      desc: "A feel-good story about finding joy in unexpected places. Perfect for when you need a reminder that happiness comes in all sizes.",
+      link: 'https://books2read.com/u/4Nnw8G',
+      price: '$3.99'
+    },
+    valleyfair: {
+      title: 'Just Another Typical Day in Valley Fair',
+      cover: 'https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/cf5a926a2_4d4ec6ea3_Just-Another-Typical-Day-in-Valley-Fair-original.jpg',
+      desc: "Small town, big drama. A slice-of-life story that finds extraordinary depth in ordinary people. You'll laugh, you'll think, you'll see your own town differently.",
+      link: 'https://books2read.com/u/47APQg',
+      price: '$4.99'
+    },
+    salvager1: {
+      title: "The Salvager: The Sisters' Plea",
+      cover: 'https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/bcb204f95_410e0021d_TheSalvagerSeriesBook1_cover_corrected.jpg',
+      desc: "The start of an addictive adventure series. Two sisters, one desperate plea, and a salvager who can't walk away. You'll be hooked from page one.",
+      link: 'https://books2read.com/u/4XVjp7',
+      price: '$4.99'
+    }
+  };
+
+  var book = books[winner];
+  var card = document.getElementById('resultCard');
+  card.innerHTML = '<div class="result-label">Your Perfect Match</div>' +
+    '<img src="' + book.cover + '" alt="' + book.title + ' cover">' +
+    '<h3>' + book.title + '</h3>' +
+    '<p>' + book.desc + '</p>' +
+    '<a href="' + book.link + '" class="btn-buy" target="_blank" style="background:var(--navy);color:white;padding:12px 30px;border-radius:50px;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;display:inline-block;">Get it for ' + book.price + '</a>';
+  document.getElementById('result').classList.add('active');
+}
+
+function restartQuiz() {
+  answers = {};
+  for (var i = 1; i <= 4; i++) {
+    document.getElementById('q' + i).classList.remove('active');
+  }
+  document.getElementById('result').classList.remove('active');
+  document.getElementById('q1').classList.add('active');
+}
+
+function copyLink() {
+  navigator.clipboard.writeText('https://resuter51-ops.github.io/author-landing/').then(function() {
+    alert('Link copied! Share it anywhere.');
+  });
+}
+</script>
+
+</body>
+</html>
