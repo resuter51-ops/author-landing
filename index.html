@@ -37,7 +37,6 @@
     position: relative;
     overflow: hidden;
   }
-  
   .hero::before {
     content: '';
     position: absolute;
@@ -46,315 +45,179 @@
     background: radial-gradient(circle, rgba(212,168,73,0.08) 0%, transparent 60%);
     animation: drift 20s ease-in-out infinite;
   }
-  
   @keyframes drift {
     0%, 100% { transform: translate(0, 0); }
     50% { transform: translate(-30px, 20px); }
   }
-  
   .hero-content { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
-  
-  .hero h1 {
-    font-size: 2.2rem;
-    font-weight: normal;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-  }
-  
-  .hero .tagline {
-    color: var(--gold);
-    font-size: 1.1rem;
-    font-style: italic;
-    margin-bottom: 24px;
-  }
-  
-  .hero .story {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.85);
-    max-width: 480px;
-    margin: 0 auto 32px;
-    line-height: 1.8;
-  }
-  
+  .hero h1 { font-size: 2.2rem; font-weight: normal; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .hero .tagline { color: var(--gold); font-size: 1.1rem; font-style: italic; margin-bottom: 24px; }
+  .hero .story { font-size: 1.05rem; color: rgba(255,255,255,0.85); max-width: 480px; margin: 0 auto 32px; line-height: 1.8; }
   .hero-cta {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--dark);
-    padding: 14px 36px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 15px rgba(212,168,73,0.4);
+    display: inline-block; background: var(--gold); color: var(--dark);
+    padding: 14px 36px; border-radius: 50px; text-decoration: none;
+    font-size: 1.1rem; font-weight: bold; font-family: Arial, sans-serif;
+    transition: transform 0.2s; box-shadow: 0 4px 15px rgba(212,168,73,0.4);
   }
-  
   .hero-cta:active { transform: scale(0.95); }
-  
-  .hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 36px;
-    flex-wrap: wrap;
-  }
-  
+  .hero-stats { display: flex; justify-content: center; gap: 30px; margin-top: 36px; flex-wrap: wrap; }
   .stat { text-align: center; }
   .stat .num { font-size: 1.8rem; color: var(--gold); font-weight: bold; }
   .stat .label { font-size: 0.8rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
   
-  /* BOOKS SECTION */
+  /* BUNDLE BANNER */
+  .bundle-banner {
+    background: linear-gradient(135deg, var(--gold) 0%, #c4962f 100%);
+    color: var(--dark); text-align: center; padding: 20px; font-family: Arial, sans-serif;
+  }
+  .bundle-banner .bundle-text { font-size: 1rem; font-weight: bold; }
+  .bundle-banner .bundle-link { font-size: 0.85rem; text-decoration: underline; margin-top: 4px; display: block; color: var(--dark); }
+  
+  /* BOOKS */
   .section { padding: 50px 20px; max-width: 700px; margin: 0 auto; }
-  
-  .section-title {
-    text-align: center;
-    font-size: 1.6rem;
-    color: var(--navy);
-    margin-bottom: 8px;
-  }
-  
-  .section-sub {
-    text-align: center;
-    color: var(--light-text);
-    font-size: 0.95rem;
-    margin-bottom: 36px;
-    font-style: italic;
-  }
+  .section-title { text-align: center; font-size: 1.6rem; color: var(--navy); margin-bottom: 8px; }
+  .section-sub { text-align: center; color: var(--light-text); font-size: 0.95rem; margin-bottom: 36px; font-style: italic; }
   
   .book-card {
-    display: flex;
-    gap: 20px;
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex; gap: 20px; background: white; border-radius: 12px;
+    padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s;
   }
-  
   .book-card:active { transform: scale(0.98); }
-  
-  .book-cover {
-    width: 100px;
-    min-width: 100px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-  
+  .book-cover { width: 100px; min-width: 100px; height: 150px; object-fit: cover; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
   .book-info { flex: 1; }
-  
   .book-title { font-size: 1.2rem; color: var(--navy); margin-bottom: 4px; }
   .book-price { color: var(--gold); font-weight: bold; font-size: 0.9rem; font-family: Arial, sans-serif; margin-bottom: 8px; }
-  .book-desc { font-size: 0.9rem; color: #555; margin-bottom: 14px; line-height: 1.6; }
-  
-  .book-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
-  
+  .book-desc { font-size: 0.9rem; color: #555; margin-bottom: 10px; line-height: 1.6; }
+  .book-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
   .btn-buy {
-    background: var(--navy);
-    color: white;
-    padding: 10px 24px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    transition: background 0.2s;
+    background: var(--navy); color: white; padding: 10px 24px; border-radius: 50px;
+    text-decoration: none; font-size: 0.85rem; font-family: Arial, sans-serif;
+    font-weight: bold; transition: background 0.2s; border: none; cursor: pointer;
   }
-  
   .btn-buy:active { background: var(--dark); }
-  
   .btn-preview {
-    background: transparent;
-    color: var(--navy);
-    border: 2px solid var(--navy);
-    padding: 8px 22px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
+    background: transparent; color: var(--navy); border: 2px solid var(--navy);
+    padding: 8px 22px; border-radius: 50px; text-decoration: none; font-size: 0.85rem;
+    font-family: Arial, sans-serif; font-weight: bold; cursor: pointer;
+  }
+  .btn-store {
+    background: transparent; color: var(--gold); border: none;
+    font-size: 0.8rem; font-family: Arial, sans-serif; font-weight: bold; text-decoration: none;
+    cursor: pointer; padding: 4px 0;
+  }
+  .series-badge {
+    display: inline-block; background: var(--gold); color: var(--dark);
+    font-size: 0.7rem; padding: 2px 10px; border-radius: 20px;
+    font-family: Arial, sans-serif; font-weight: bold; margin-bottom: 6px;
   }
   
-  .series-badge {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--dark);
-    font-size: 0.7rem;
-    padding: 2px 10px;
-    border-radius: 20px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    margin-bottom: 6px;
+  /* WHY I WROTE THIS */
+  .why-toggle {
+    font-size: 0.85rem; color: var(--navy); cursor: pointer;
+    font-style: italic; margin-top: 6px; user-select: none;
   }
+  .why-toggle:active { color: var(--gold); }
+  .why-text {
+    display: none; font-size: 0.85rem; color: #666;
+    margin-top: 8px; padding: 12px; background: #faf8f3;
+    border-radius: 8px; border-left: 3px solid var(--gold);
+    line-height: 1.6;
+  }
+  .why-text.show { display: block; }
+  
+  /* PREVIEW READER */
+  .preview-overlay {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15,24,37,0.9); z-index: 1000; overflow-y: auto;
+    padding: 20px;
+  }
+  .preview-overlay.show { display: block; }
+  .preview-box {
+    max-width: 600px; margin: 20px auto; background: white; border-radius: 14px;
+    padding: 30px 25px; position: relative;
+  }
+  .preview-close {
+    position: absolute; top: 15px; right: 15px; width: 36px; height: 36px;
+    border-radius: 50%; border: none; background: var(--cream); font-size: 1.3rem;
+    cursor: pointer; color: var(--navy);
+  }
+  .preview-label { color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-family: Arial, sans-serif; font-weight: bold; margin-bottom: 4px; }
+  .preview-title { font-size: 1.3rem; color: var(--navy); margin-bottom: 4px; }
+  .preview-chapter { font-size: 0.9rem; color: #888; font-style: italic; margin-bottom: 20px; }
+  .preview-text { font-size: 1rem; color: #333; line-height: 1.9; white-space: pre-wrap; }
+  .preview-cta {
+    margin-top: 24px; padding-top: 20px; border-top: 1px solid #eee;
+    text-align: center;
+  }
+  .preview-cta p { font-size: 0.9rem; color: #888; margin-bottom: 14px; font-style: italic; }
   
   /* QUIZ */
-  .quiz-section {
-    background: var(--navy);
-    color: white;
-    padding: 50px 20px;
-  }
-  
-  .quiz-container {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .quiz-title {
-    text-align: center;
-    font-size: 1.6rem;
-    margin-bottom: 8px;
-  }
-  
-  .quiz-sub {
-    text-align: center;
-    color: rgba(255,255,255,0.7);
-    font-size: 0.95rem;
-    margin-bottom: 30px;
-  }
-  
+  .quiz-section { background: var(--navy); color: white; padding: 50px 20px; }
+  .quiz-container { max-width: 500px; margin: 0 auto; }
+  .quiz-title { text-align: center; font-size: 1.6rem; margin-bottom: 8px; }
+  .quiz-sub { text-align: center; color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-bottom: 30px; }
   .quiz-screen { display: none; }
   .quiz-screen.active { display: block; }
-  
-  .quiz-question {
-    font-size: 1.15rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
+  .quiz-question { font-size: 1.15rem; margin-bottom: 20px; text-align: center; }
   .quiz-options { display: flex; flex-direction: column; gap: 12px; }
-  
   .quiz-option {
-    background: rgba(255,255,255,0.1);
-    border: 2px solid rgba(255,255,255,0.15);
-    color: white;
-    padding: 16px 20px;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-family: Georgia, serif;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-align: left;
+    background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.15);
+    color: white; padding: 16px 20px; border-radius: 10px; font-size: 1rem;
+    font-family: Georgia, serif; cursor: pointer; transition: all 0.2s; text-align: left;
   }
-  
-  .quiz-option:active {
-    background: var(--gold);
-    color: var(--dark);
-    border-color: var(--gold);
-    transform: scale(0.98);
-  }
-  
-  .quiz-progress {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-  
-  .quiz-dot {
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-  }
-  
+  .quiz-option:active { background: var(--gold); color: var(--dark); border-color: var(--gold); transform: scale(0.98); }
+  .quiz-progress { display: flex; justify-content: center; gap: 8px; margin-bottom: 24px; }
+  .quiz-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.2); }
   .quiz-dot.done { background: var(--gold); }
-  
-  /* QUIZ RESULT */
-  .result-card {
-    background: white;
-    border-radius: 14px;
-    padding: 30px 20px;
-    text-align: center;
-    color: var(--text);
-  }
-  
-  .result-card img {
-    width: 130px;
-    height: 195px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    margin-bottom: 16px;
-  }
-  
-  .result-card .result-label {
-    color: var(--gold);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
+  .result-card { background: white; border-radius: 14px; padding: 30px 20px; text-align: center; color: var(--text); }
+  .result-card img { width: 130px; height: 195px; object-fit: cover; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.2); margin-bottom: 16px; }
+  .result-card .result-label { color: var(--gold); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-family: Arial, sans-serif; font-weight: bold; margin-bottom: 8px; }
   .result-card h3 { font-size: 1.3rem; color: var(--navy); margin-bottom: 10px; }
   .result-card p { font-size: 0.95rem; color: #555; margin-bottom: 20px; line-height: 1.6; }
+  .quiz-restart { background: transparent; color: rgba(255,255,255,0.6); border: none; font-size: 0.85rem; font-family: Georgia, serif; text-decoration: underline; cursor: pointer; margin: 20px auto 0; display: block; }
   
-  .result-card .btn-buy { display: inline-block; }
-  
-  .quiz-restart {
-    background: transparent;
-    color: rgba(255,255,255,0.6);
-    border: none;
-    font-size: 0.85rem;
-    font-family: Georgia, serif;
-    text-decoration: underline;
-    cursor: pointer;
-    margin-top: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  /* EMAIL SIGNUP */
+  .signup-section {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--dark) 100%);
+    color: white; padding: 50px 20px; text-align: center;
   }
+  .signup-container { max-width: 500px; margin: 0 auto; }
+  .signup-title { font-size: 1.5rem; margin-bottom: 8px; }
+  .signup-sub { color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-bottom: 24px; }
+  .signup-form { display: flex; flex-direction: column; gap: 12px; }
+  .signup-input {
+    padding: 14px 20px; border: 2px solid rgba(255,255,255,0.2); border-radius: 50px;
+    font-size: 1rem; font-family: Arial, sans-serif; background: rgba(255,255,255,0.08);
+    color: white; outline: none;
+  }
+  .signup-input::placeholder { color: rgba(255,255,255,0.4); }
+  .signup-input:focus { border-color: var(--gold); }
+  .signup-btn {
+    background: var(--gold); color: var(--dark); border: none; padding: 14px 30px;
+    border-radius: 50px; font-size: 1rem; font-weight: bold; font-family: Arial, sans-serif;
+    cursor: pointer; transition: transform 0.2s;
+  }
+  .signup-btn:active { transform: scale(0.95); }
+  .signup-msg { font-size: 0.9rem; margin-top: 14px; min-height: 20px; }
+  .signup-msg.success { color: var(--gold); }
+  .signup-msg.error { color: #ff6b6b; }
+  .signup-perks { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 16px; }
   
   /* ABOUT */
-  .about-section {
-    background: white;
-    padding: 50px 20px;
-    text-align: center;
-  }
-  
+  .about-section { background: white; padding: 50px 20px; text-align: center; }
   .about-section .section-title { margin-bottom: 20px; }
-  
-  .about-text {
-    max-width: 480px;
-    margin: 0 auto;
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.8;
-  }
-  
+  .about-text { max-width: 480px; margin: 0 auto; font-size: 1rem; color: #555; line-height: 1.8; }
   .about-text .highlight { color: var(--navy); font-weight: bold; }
   
   /* SHARE */
-  .share-section {
-    background: var(--cream);
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .share-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 16px;
-  }
-  
+  .share-section { background: var(--cream); padding: 40px 20px; text-align: center; }
+  .share-buttons { display: flex; justify-content: center; gap: 12px; margin-top: 16px; }
   .share-btn {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: white;
-    transition: transform 0.2s;
-    cursor: pointer;
-    border: none;
+    width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; text-decoration: none; font-size: 1.2rem; color: white;
+    transition: transform 0.2s; cursor: pointer; border: none;
   }
-  
   .share-btn:active { transform: scale(0.9); }
   .share-btn.fb { background: #1877f2; }
   .share-btn.tw { background: #000; }
@@ -362,27 +225,8 @@
   .share-btn.copy { background: var(--gold); color: var(--dark); }
   
   /* FOOTER */
-  footer {
-    background: var(--dark);
-    color: rgba(255,255,255,0.5);
-    text-align: center;
-    padding: 30px 20px;
-    font-size: 0.85rem;
-  }
-  
+  footer { background: var(--dark); color: rgba(255,255,255,0.5); text-align: center; padding: 30px 20px; font-size: 0.85rem; }
   footer a { color: var(--gold); text-decoration: none; }
-  
-  /* BUNDLE BANNER */
-  .bundle-banner {
-    background: linear-gradient(135deg, var(--gold) 0%, #c4962f 100%);
-    color: var(--dark);
-    text-align: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .bundle-banner .bundle-text { font-size: 1rem; font-weight: bold; }
-  .bundle-banner .bundle-link { font-size: 0.85rem; text-decoration: underline; margin-top: 4px; display: block; color: var(--dark); }
   
   @media (max-width: 380px) {
     .hero h1 { font-size: 1.8rem; }
@@ -413,85 +257,110 @@
 
 <!-- BUNDLE BANNER -->
 <div class="bundle-banner">
-  <div class="bundle-text">Get all 5 books at the eBook store</div>
-  <a href="https://resuter51-ops.github.io/ebook-store/" class="bundle-link">Visit the Store &#8594;</a>
+  <div class="bundle-text">Read free chapters below &#8212; then get the full books</div>
+  <a href="https://resuter51-ops.github.io/ebook-store/" class="bundle-link">Visit the eBook Store &#8594;</a>
 </div>
 
 <!-- BOOKS -->
 <div class="section" id="books">
   <h2 class="section-title">The Collection</h2>
-  <p class="section-sub">Five stories. One unforgettable voice.</p>
+  <p class="section-sub">Five stories. One unforgettable voice. Tap "Read Chapter 1" for a free preview.</p>
 
   <!-- Happiness Finds Big Man -->
   <div class="book-card">
-    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/d88ad9ebf_happiness-finds-big-man.png" alt="Happiness Finds Big Man cover">
+    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/d88ad9ebf_happiness-finds-big-man.png" alt="Happiness Finds Big Man">
     <div class="book-info">
       <div class="book-title">Happiness Finds Big Man</div>
       <div class="book-price">$3.99</div>
-      <div class="book-desc">A big man with a big heart finds happiness in the most unexpected places. A feel-good story that proves joy doesn't care about your size, your situation, or what anyone else thinks.</div>
+      <div class="book-desc">A big man with a big heart finds happiness in the most unexpected places. A feel-good story that proves joy doesn&#039;t care about your size, your situation, or what anyone else thinks.</div>
       <div class="book-buttons">
-        <a href="https://books2read.com/u/4Nnw8G" class="btn-buy" target="_blank">Buy Now</a>
-        <a href="https://resuter51-ops.github.io/ebook-store/" class="btn-preview" target="_blank">eBook Store</a>
+        <button class="btn-buy" onclick="openPreview('happiness','Happiness Finds Big Man','https://books2read.com/u/4Nnw8G','$3.99')">Read Chapter 1 Free</button>
+        <a href="https://books2read.com/u/4Nnw8G" class="btn-buy" target="_blank" style="background:var(--gold);color:var(--dark);">Buy $3.99</a>
       </div>
+      <div class="why-toggle" onclick="toggleWhy(this)">&#9656; Why I wrote this &#9656;</div>
+      <div class="why-text">This book is dedicated to my friend Angie Sanchez, who inspired the character Evie. I wanted to write a story about finding happiness when life puts you somewhere you didn&#039;t expect &#8212; something I know a thing or two about.</div>
     </div>
   </div>
 
   <!-- Valley Fair -->
   <div class="book-card">
-    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/cf5a926a2_4d4ec6ea3_Just-Another-Typical-Day-in-Valley-Fair-original.jpg" alt="Just Another Typical Day in Valley Fair cover">
+    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/cf5a926a2_4d4ec6ea3_Just-Another-Typical-Day-in-Valley-Fair-original.jpg" alt="Valley Fair">
     <div class="book-info">
       <div class="book-title">Just Another Typical Day in Valley Fair</div>
       <div class="book-price">$4.99</div>
       <div class="book-desc">Small town. Big drama. One day changes everything. A slice-of-life story that captures the humor, heartbreak, and hidden depths of an ordinary American town.</div>
       <div class="book-buttons">
-        <a href="https://books2read.com/u/47APQg" class="btn-buy" target="_blank">Buy Now</a>
-        <a href="https://resuter51-ops.github.io/ebook-store/" class="btn-preview" target="_blank">eBook Store</a>
+        <button class="btn-buy" onclick="openPreview('valleyfair','Just Another Typical Day in Valley Fair','https://books2read.com/u/47APQg','$4.99')">Read Chapter 1 Free</button>
+        <a href="https://books2read.com/u/47APQg" class="btn-buy" target="_blank" style="background:var(--gold);color:var(--dark);">Buy $4.99</a>
       </div>
+      <div class="why-toggle" onclick="toggleWhy(this)">&#9656; Why I wrote this &#9656;</div>
+      <div class="why-text">I worked at a place like Valley Fair back in 1968. The characters, the small-town politics, the humor &#8212; it all stayed with me for decades. I wanted to capture that world before it disappeared.</div>
     </div>
   </div>
 
   <!-- Salvager 1 -->
   <div class="book-card">
-    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/bcb204f95_410e0021d_TheSalvagerSeriesBook1_cover_corrected.jpg" alt="The Salvager Book 1 cover">
+    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/bcb204f95_410e0021d_TheSalvagerSeriesBook1_cover_corrected.jpg" alt="Salvager 1">
     <div class="book-info">
       <span class="series-badge">Series &#183; Book 1</span>
-      <div class="book-title">The Salvager: The Sisters' Plea</div>
+      <div class="book-title">The Salvager: The Sisters&#039; Plea</div>
       <div class="book-price">$4.99</div>
-      <div class="book-desc">Two sisters. One desperate plea. A salvager who can't say no. The adventure begins with a simple job that turns into something far more dangerous &#8212; and far more personal.</div>
+      <div class="book-desc">Two sisters. One desperate plea. A salvager who can&#039;t say no. The adventure begins with a simple job that turns into something far more dangerous &#8212; and far more personal.</div>
       <div class="book-buttons">
-        <a href="https://books2read.com/u/4XVjp7" class="btn-buy" target="_blank">Buy Now</a>
-        <a href="https://resuter51-ops.github.io/ebook-store/" class="btn-preview" target="_blank">eBook Store</a>
+        <button class="btn-buy" onclick="openPreview('salvager1','The Salvager: The Sisters Plea','https://books2read.com/u/4XVjp7','$4.99')">Read Chapter 1 Free</button>
+        <a href="https://books2read.com/u/4XVjp7" class="btn-buy" target="_blank" style="background:var(--gold);color:var(--dark);">Buy $4.99</a>
       </div>
+      <div class="why-toggle" onclick="toggleWhy(this)">&#9656; Why I wrote this &#9656;</div>
+      <div class="why-text">I&#039;ve always loved a good thriller. Zeke Carter came to me fully formed &#8212; a guy who fixes things for people, no questions asked, until the questions come looking for him. Three books later, he still won&#039;t leave me alone.</div>
     </div>
   </div>
 
   <!-- Salvager 2 -->
   <div class="book-card">
-    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/2d74d72ed_94c74cf2d_Bookd2d-2-The-Runaway-Daughter-original.jpg" alt="The Salvager Book 2 cover">
+    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/2d74d72ed_94c74cf2d_Bookd2d-2-The-Runaway-Daughter-original.jpg" alt="Salvager 2">
     <div class="book-info">
       <span class="series-badge">Series &#183; Book 2</span>
       <div class="book-title">The Salvager: The Runaway Daughter</div>
       <div class="book-price">$4.99</div>
-      <div class="book-desc">She ran from everything. Now someone's bringing her back. The salvager's next job hits closer to home as secrets unravel and the stakes get deadlier.</div>
+      <div class="book-desc">She ran from everything. Now someone&#039;s bringing her back. The salvager&#039;s next job hits closer to home as secrets unravel and the stakes get deadlier.</div>
       <div class="book-buttons">
-        <a href="https://books2read.com/u/49gV6w" class="btn-buy" target="_blank">Buy Now</a>
-        <a href="https://resuter51-ops.github.io/ebook-store/" class="btn-preview" target="_blank">eBook Store</a>
+        <button class="btn-buy" onclick="openPreview('salvager2','The Salvager: The Runaway Daughter','https://books2read.com/u/49gV6w','$4.99')">Read Chapter 1 Free</button>
+        <a href="https://books2read.com/u/49gV6w" class="btn-buy" target="_blank" style="background:var(--gold);color:var(--dark);">Buy $4.99</a>
       </div>
+      <div class="why-toggle" onclick="toggleWhy(this)">&#9656; Why I wrote this &#9656;</div>
+      <div class="why-text">Book 2 was about raising the stakes. I wanted Zeke to face something that couldn&#039;t be fixed with his usual toolkit &#8212; something that would force him to confront the people he thought he knew.</div>
     </div>
   </div>
 
   <!-- Salvager 3 -->
   <div class="book-card">
-    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/ece74695b_tmp_salvager3.jpg" alt="The Salvager Book 3 cover">
+    <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/ece74695b_tmp_salvager3.jpg" alt="Salvager 3">
     <div class="book-info">
       <span class="series-badge">Series &#183; Book 3</span>
       <div class="book-title">The Salvager: The Network</div>
       <div class="book-price">$4.99</div>
-      <div class="book-desc">The truth was never supposed to get out. Now there's no stopping it. The thrilling conclusion to The Salvager series &#8212; where every connection comes with a cost.</div>
+      <div class="book-desc">The truth was never supposed to get out. Now there&#039;s no stopping it. The thrilling conclusion to The Salvager series &#8212; where every connection comes with a cost.</div>
       <div class="book-buttons">
-        <a href="https://books2read.com/u/4AW08p" class="btn-buy" target="_blank">Buy Now</a>
-        <a href="https://resuter51-ops.github.io/ebook-store/" class="btn-preview" target="_blank">eBook Store</a>
+        <button class="btn-buy" onclick="openPreview('salvager3','The Salvager: The Network','https://books2read.com/u/4AW08p','$4.99')">Read Chapter 1 Free</button>
+        <a href="https://books2read.com/u/4AW08p" class="btn-buy" target="_blank" style="background:var(--gold);color:var(--dark);">Buy $4.99</a>
       </div>
+      <div class="why-toggle" onclick="toggleWhy(this)">&#9656; Why I wrote this &#9656;</div>
+      <div class="why-text">This one is dedicated to Patty Machiaverna, my old friend and best fan. I wanted to end the series with a bang &#8212; every thread pulled tight, every secret exposed. Zeke earned his ending.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PREVIEW READER OVERLAY -->
+<div class="preview-overlay" id="previewOverlay">
+  <div class="preview-box">
+    <button class="preview-close" onclick="closePreview()">&#10005;</button>
+    <div class="preview-label">Free Preview</div>
+    <div class="preview-title" id="previewTitle"></div>
+    <div class="preview-chapter" id="previewChapter"></div>
+    <div class="preview-text" id="previewText"></div>
+    <div class="preview-cta">
+      <p>Want to know what happens next?</p>
+      <a href="#" id="previewBuyLink" class="btn-buy" target="_blank" style="display:inline-block;background:var(--gold);color:var(--dark);padding:14px 36px;font-size:1rem;">Get the Full Book</a>
     </div>
   </div>
 </div>
@@ -500,15 +369,11 @@
 <div class="quiz-section" id="quiz">
   <div class="quiz-container">
     <h2 class="quiz-title">Find Your Next Read</h2>
-    <p class="quiz-sub">Answer 4 quick questions and I'll match you with the perfect book</p>
+    <p class="quiz-sub">Answer 4 quick questions and I&#039;ll match you with the perfect book</p>
 
-    <!-- Q1 -->
     <div class="quiz-screen active" id="q1">
       <div class="quiz-progress">
-        <div class="quiz-dot done"></div>
-        <div class="quiz-dot"></div>
-        <div class="quiz-dot"></div>
-        <div class="quiz-dot"></div>
+        <div class="quiz-dot done"></div><div class="quiz-dot"></div><div class="quiz-dot"></div><div class="quiz-dot"></div>
       </div>
       <div class="quiz-question">What are you in the mood for?</div>
       <div class="quiz-options">
@@ -519,13 +384,9 @@
       </div>
     </div>
 
-    <!-- Q2 -->
     <div class="quiz-screen" id="q2">
       <div class="quiz-progress">
-        <div class="quiz-dot done"></div>
-        <div class="quiz-dot done"></div>
-        <div class="quiz-dot"></div>
-        <div class="quiz-dot"></div>
+        <div class="quiz-dot done"></div><div class="quiz-dot done"></div><div class="quiz-dot"></div><div class="quiz-dot"></div>
       </div>
       <div class="quiz-question">What themes pull you in?</div>
       <div class="quiz-options">
@@ -536,13 +397,9 @@
       </div>
     </div>
 
-    <!-- Q3 -->
     <div class="quiz-screen" id="q3">
       <div class="quiz-progress">
-        <div class="quiz-dot done"></div>
-        <div class="quiz-dot done"></div>
-        <div class="quiz-dot done"></div>
-        <div class="quiz-dot"></div>
+        <div class="quiz-dot done"></div><div class="quiz-dot done"></div><div class="quiz-dot done"></div><div class="quiz-dot"></div>
       </div>
       <div class="quiz-question">How do you like your stories?</div>
       <div class="quiz-options">
@@ -552,15 +409,11 @@
       </div>
     </div>
 
-    <!-- Q4 -->
     <div class="quiz-screen" id="q4">
       <div class="quiz-progress">
-        <div class="quiz-dot done"></div>
-        <div class="quiz-dot done"></div>
-        <div class="quiz-dot done"></div>
-        <div class="quiz-dot done"></div>
+        <div class="quiz-dot done"></div><div class="quiz-dot done"></div><div class="quiz-dot done"></div><div class="quiz-dot done"></div>
       </div>
-      <div class="quiz-question">What's your ideal reading length?</div>
+      <div class="quiz-question">What&#039;s your ideal reading length?</div>
       <div class="quiz-options">
         <button class="quiz-option" onclick="answer(4, 'short')">Short and sweet &#8212; under 200 pages</button>
         <button class="quiz-option" onclick="answer(4, 'medium')">Medium &#8212; a solid afternoon read</button>
@@ -568,13 +421,25 @@
       </div>
     </div>
 
-    <!-- RESULT -->
     <div class="quiz-screen" id="result">
-      <div class="result-card" id="resultCard">
-        <!-- filled by JS -->
-      </div>
+      <div class="result-card" id="resultCard"></div>
       <button class="quiz-restart" onclick="restartQuiz()">&#8592; Take the quiz again</button>
     </div>
+  </div>
+</div>
+
+<!-- EMAIL SIGNUP -->
+<div class="signup-section" id="signup">
+  <div class="signup-container">
+    <h2 class="signup-title">Join the Reader Family</h2>
+    <p class="signup-sub">Get notified about new releases, special deals, and behind-the-scenes stories &#8212; straight from Bob.</p>
+    <form class="signup-form" onsubmit="return subscribe(event)">
+      <input type="email" class="signup-input" id="emailInput" placeholder="Your email address" required>
+      <input type="text" class="signup-input" id="nameInput" placeholder="Your name (optional)">
+      <button type="submit" class="signup-btn">Sign Me Up</button>
+    </form>
+    <div class="signup-msg" id="signupMsg"></div>
+    <p class="signup-perks">No spam. Just books and stories. Unsubscribe anytime.</p>
   </div>
 </div>
 
@@ -584,7 +449,7 @@
   <p class="about-text">
     <span class="highlight">Robert E. Suter</span> is a 73-year-old author writing from a nursing home in New Jersey.
     Living with CIDP (Chronic Inflammatory Demyelinating Polyneuropathy), he turned to storytelling &#8212;
-    proving that it's never too late to chase a passion. His five books span heartwarming fiction,
+    proving that it&#039;s never too late to chase a passion. His five books span heartwarming fiction,
     small-town drama, and a three-part adventure series, all written with the honesty, humor, and heart
     that come from a life fully lived.
   </p>
@@ -592,7 +457,7 @@
 
 <!-- SHARE -->
 <div class="share-section">
-  <p style="font-size: 0.95rem; color: var(--light-text);">Know someone who'd love these books? Share!</p>
+  <p style="font-size: 0.95rem; color: var(--light-text);">Know someone who&#039;d love these books? Share!</p>
   <div class="share-buttons">
     <a href="https://www.facebook.com/sharer/sharer.php?u=https://resuter51-ops.github.io/author-landing/" class="share-btn fb" target="_blank">f</a>
     <a href="https://twitter.com/intent/tweet?text=Check out these books by Robert E. Suter&url=https://resuter51-ops.github.io/author-landing/" class="share-btn tw" target="_blank">X</a>
@@ -608,8 +473,55 @@
 </footer>
 
 <script>
-var answers = {};
+var PREVIEWS = {
+  happiness: 'Chapter 1: New Beginnings\nEvie Parker’sarrivalat Happy Valley Nursing Home marked a pivotal mo ment in\nher life. Leaving behind a small town fil led with hear t-wrenching me mories, she\nsought solace and afr esh start in the cit yaft er the tragic los sof he rone-year -old\nson. The weight of he rgrief was immense, bu t Evie was det ermined to find pu r-\npose am idst the pain.\nOn he rfirst day as part of the clean ing crew, she navigated the bu stling hall-\nways, he remot ions a mix of anxiet yand ho pe. The job was simple—mopping\nfloors, wiping do wn tables, emptying trash bins—but the routine kept he rmind\noccupied, and that was what she ne eded mos t. As she entered the common room,\nthe lively ch atter of reside nts playing cards fil led the air.\nAmong them was Robert “Big Man” Malone, a retired truck dr iver whose\ntowering presence was complemented by a warm, inviting smile. H esat in his\nwheelch air, watching the game unfold with am usement as he occasionally\nchimed in with playful banter. Whe n Evie passed nearb y, his keen eyes picked up\non he runfamiliar face.\n“Hey there, you must be ne w,” he called ou t, his de ep voice filled with friend-\nliness.\nStartled, Evie turned, managing a small smile. “ Yes, I am . I’m Evie, the ne wcleane r.”\n“Welcome t o Happy Valley, Evie. I ’m Big Man,” he sa id, extending a large,\nweathered hand. “I f you ne ed an ything or just want to ch at, do n’thesit ate.”\n“Thanks, Big Man,” she replied, shaking his hand. The re was something com-\nforting ab out his presence, like afamiliar warmth she hadn’tfelt in alo ng time.\nOver the fo llowing weeks, Evie and Big Man’spaths crossed frequently. She\nadm ired his de dication to uplifting fel low reside nts, oft en organizing group ac-\ntivities o rsharing stories fr om his trucking days. The ych atted in passing, their\nconversations growing mo re personal with time.\nOne aft ernoon, as Evie cleane dthe patio ar ea, she fou nd Big Man near asmall patch of fr eshly turned so il. Ayou ng che rry tree, it sdel icate branches\nstretching toward the sk y, stood in the center.\nShe paused, puz zled. “I didn’tknow w ehad a garden he re.”\n1Big Man wiped his brow and smiled. “Started it a while back. Thou ght it\nwould be nice for folks to have a place to relax and enjoy nature.” He no dded to-\nward the tree. “This one’sspecial, though. Planted it this mo rning—fo ryou .”\n“For me ?” Evie’sbreath...',
+  valleyfair: 'Chapter 1: Valley Fair, Summer ‘68\nI t was the summer of 1968 when I fi rst walked into Valley Fair to apply fo r ajob.\nI had m yeye o nthe grocery de partment, bu t I wasn’tpicky—just needed work.\nJimmy Barlow, the man do ing the hiring, gave me a quick once-over and sa id they\nhad an opening in produce. I told him I’dbe happy to take it.\nThat very night, I started. My first introduction was to the produce manager,\nElmo. He was a wiry guy with a gaunt face, always smelling faintly of cig arettes\nand chea pwhiskey. Elmo had a reputation—drinking on the job, gamb ling on\nFridays. Every week, there was a card game going on in the back offic eof the del idepartment, and it wasn’taft er hou rs eit her. I t happened right in the middle of\nstore time, while cu stomers pu shed carts down the aisles and kids begged for can-\ndy near the registers. I t was just one of those things—unspoken, bu twell-known.\nNext up was Den-Den, the ot her part-time worker. He was the one breaking\nme i n. Den-Den wasn’tthe hardest worker—he liked to take it ea sy—but he\ntreated me fairly and sho wed me the ropes.\nThe very first thing Den-Den sho wed me was ho wto use the sc ale. I t was abig piece of equipment, maybe two and a half feet lo ng, with afl at met al plate to\nmatch—perfect fo rweighing bags of produce or loose vegetables. Above that was\nalong, lit display windo wwith a red line running through the middle. Across the\ntop were all the different price points, and t othe left were the weight markings in\npounds and ou nces.\nI t wasn’trocket scie nce, bu tfor a kid just starting ou t, it was alittle intimidat-\ning—especially when you had to price something that cost mo re than the sc ale\nwould calculate.\nThe trick was to weigh it, fi nd the price for half, and then doub le it i nyou rhead .\nYou also had to lear nto tell the difference between the fr uits and vegetables, and\nmore importantly, me morize the price per pound fo reach one.\nDen-Den dr illed me hard on that scale. A tfirst, I thought he was being gen-\nerous—making sure I got the hang of things. Later I realized he just wanted to\n3make sure I could handle the sc ale so he could disappear fo rmos tof the night.\nLike I sa id, Den-Den wasn’texact ly management material.\nRight nex tto the sc ale, w ehad a master list of produce prices, and the sa le\nitems were taped right onto the sc ale it self. Heaven hel pyou...',
+  salvager1: 'Chapter 1— The Client\nThe diner smelled likeburnt coffee and February. Zeke Carter wrapped his\nhands ar ound ach ipped mug and watched the do or, letting the warmth creep in-\nto his knuckles. The cit you tside was a gray bruise ; inside, the clo ck o nthe wall\nran fiv eminutes slo wand the waitress called everyone “ hon” like it was amo ral\npractice.\n“Zeke?” The woman who sa id his name was small-frame d, big-eyed, and\nwound tight enou gh to hum. She took the booth across from him and fo lded he rcoat beside he rlike ash ield.\n“Claire Wh itman,” she sa id, trying to make the introduction sou nd steady .\n“Thank you fo rme eting me. ”\n“You’re welcome.” Zeke set the mug do wn, the bottom cl inking on Formica.\nHe didn’toffe r asmile; he offe red presence. I t worked better.\n“My brother,” Claire said, hands knotting a napkin. “Marcus. He’s—he got\ninvolved with a group. The ycall themselves The Session. ‘Community,’ they say.\n‘Belonging.’ He used to laugh at slo gans. Now he talks in them. He left his job at\nthe sh ipyard. He stopped coming to ch urch. He stopped an swering me. ”\nZeke listened without interrupting. He’dlear ned people told you the truth if\nyou gave them enou gh quiet t opu tit so mewhere.\n“My mot her’s... she’ sfailing,” Claire went on. “Alzheimer’s, and no whe rhear t. Seventy-nine. W ehave good days, then hou rs vanish o nhe r. She keeps ask-\ning for Marcus. She remembers him si nging. She thinks if so meone just... if so me-\none just talks to him, he’l lcome.”\n“Whe re is The Session?” Zeke asked.\n“The Blue Wren,” Claire said. “Halston Avenue. Looks like a bar that ne ver\ndecide dif it wanted to be ach urch. The man who runs it is name d Tanner. He’s...”\nShe sear ched for a word that would land.\n“He’sthe kind of fr iendly that makes you want to che ck you rpockets. The ydo ‘check-ins’ and ‘ testimonies’ and these ‘ covenants’ where you give ten percent\nto the box and call it fr eedom.”\nZeke pu lled afo lder from his jack et pocket and wrote Marcus Wh itman\nalong the tab. “How lo ng since you sa whim face to face?”\n1\n\n“Two mo nths.” She sl id a photo ac ross the table: Marcus at a wedding, tie\nloose, grin wide. The kind of grin that made ot her people tell better jokes. “H e’snot a bad man,” Claire said quick ly, like Zeke might file him under los tcauses.\n“He dr ank too much aft er his marriage fel lapart, then he quit, then he fou...',
+  salvager2: 'The smell of turpentineand chea pperfume lingered in the loft like a ghost that\ndidn’tknow it wasn’twanted.\nZeke Carter stood in the middle of the room, hands i nhis jack et pockets,\neyes sc anning. Light filtered through the tall warehou se windo ws, soft -edged\nby grime. Wh at passed fo rfurniture had been sc avenged fr om cu rbs and\nCraigslist—mismatched couches, asa gging armch air, paint-streaked rugs. A g i-\nant leane dagainst one wall, still wet. Someone had written “N O KINGS, NO\nCHAINS” in ch arcoal over a half-finished portrait.\n“She was supposed to be ho me b y Friday,” said Mrs. Wh itfield , sea ted on the\nedge of ase condhand couch . Her voice cracked at the word Friday. Her hands\ntwisted a tissue do wn to threads .\nZeke turned slightly to give her his full attention. She was in he rear ly fo rties\nbut looked older creased at the eyes, shou lders cu rled inward like she’ dbeen brac-\ning for a blow fo ryears .\nNext to he rstood Douglas Wh itfield , tall and stiff in ach arcoal suit that still\ncarried the creases fr om ch urch. He hadn’tchanged clot hes. His ar ms were fold-\ned tight. His jaw was acle nche dline.\n“She’ sseventeen,” Douglas said. “Smart. But she’ sgotten in with... ar tists.”\nHe said the word mean tadd icts.\nZeke tilted his head . “What kind of ar tists?”\n“The wrong kind. The kind that tells he reverything she already wants to be-\nlieve.\nThe Canvas lived on the upper flo or of an old textile factory in the ar ts dis-\ntrict. The ex terior was graffiti and steel. The stairwell smelled like sage, incense,\nand mildew. At the top: ahea vy red do or painted with eyes.\nZeke knocked once. The ntwice.\nThe do or swu ng open.\nI nside : ames sof people and color and light. Music pu lled on the walls, not\nloud bu tde ep. Bodies lou nged on beanb ags and palettes. Half ado zen ea sels\nstood like sentries. A small girl with green hair walked past barefoot, ho lding abowl of glitter.\n“New face,” said a voice.\n4Zeke turned. A woman stood in front of him—copper-red hair in cu rls, eyes\nlined with gold.\nAsk irt that looked like it had been sewn ou tof so meone’sdream .\n“I’m Seraphine,” she sa id. “Welcome t o The Canvas.”\nZeke gave her a half-smile. “Just looking.”\n“Perfect,” Seraphine sa id. “That’sall we ask. Look. Feel. Create.”\nHer smile was open. Her gaze was mea suring.',
+  salvager3: 'Dedication\nFor Patty Machiaverna Joymy old frie nd, best fan,and pr oof that good\ntaste still exists.\n"For God so lov ed the world, that He gave His only begotten Son, that\nwhoever believes in Him sh all not perish, bu thave eternal life."\nJohn 3:16 (New American Standard)\nCH APTE RONE — Th e Silence Between\nWords\nZeke Carter sat inthe back row of the ch urch basement, the one place no body\never volunteered to sit —too close t othe dr afty side do or, too close t oesc ape. The\nmetal folding ch air beneath him wobbled slightly, like it hadn’tmade peace with\ngravity. Neither had half the people in the room.\nTwelve strangers fo rmed alo ose ci rcle beneath buz zing fluorescent lights. Adrip from the far si nk pu nctuated the room like aslo wmet ronome—steady , pa-\ntient, irritating.\nOn afo lding table near the coffee urn sat a plate of stale cho colate chip cook-\nies, the kind that tasted like optimism and dr ywall. Nobody touche dthem. Grief\nmeetings had a certain rhythm. The cookies were always part of it.\nThe group leade r, atired man with gentle eyes and acle rical collar.\nI t was loosened halfway do wn his throat, clear ed his voice.\n“Tonight we’re sharing one thing we wish w ecould sa yto the person we’ve\nlost,” he sa id. “Just one se ntence. N oexplaining. No defe nding. Just truth.”\nAfe wheads no dded. A woman dabbed at her eyes.\nZeke didn’tmov e. H ewasn’there to talk.\nHe was here to watch.\nSpecific ally, the man three sea ts to his left.\nMid-twenties. Hoodie. Nervous fingers tapping a rhythm against his thigh.\nEyes too bright with so mething that wasn’tgrief— purpose. A different hunger.\nHis name, ac cording to the sig n-in she et, was Evan Rourke.\nMissing-person report file dsix weeks ago.\nReturned ho me last week.\nReturned... different.\nFirst thing Evan did aft er coming back? Join this support group.\nSecond thing? Starttalking ab out “apeace that rewrites you .”\nThat phrase wasn’trando m.\n1Zeke had se en it before.\nAcross the ci rcle, Evan lifted his head , sensing pressure—or maybe attention.\nHis gaze dr ifted toward Zeke.\nThei reyes met.\nEvan smiled. Small. Knowing. Unsettling.\nNot broken.\nNot confused.\nConverted.\nThe priest no dded toward him. “Evan, would you like to go nex t?”\nEvan fo lded his hands— not quite prayer, not quite habit.\n“I’dtell him,” Evan sa id calmly, “that he didn’tdie. H ejust mov ed ahead of\nus.”\nAripple mov ed through the group. Co nfusion. Curiosit y. Disc omfort.\n“And so on,” Evan adde dsoft ly, “we’ll...',
+};
 
+// PREVIEW READER
+function openPreview(key, title, buyLink, price) {
+  var overlay = document.getElementById('previewOverlay');
+  document.getElementById('previewTitle').textContent = title;
+  var text = PREVIEWS[key] || 'Preview coming soon...';
+  // Extract chapter title from first line
+  var lines = text.split('\n');
+  var chapterTitle = lines[0];
+  document.getElementById('previewChapter').textContent = chapterTitle;
+  document.getElementById('previewText').textContent = lines.slice(1).join('\n');
+  var buyBtn = document.getElementById('previewBuyLink');
+  buyBtn.href = buyLink;
+  buyBtn.textContent = 'Get the Full Book (' + price + ')';
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePreview() {
+  document.getElementById('previewOverlay').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+// Close on overlay background click
+document.getElementById('previewOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closePreview();
+});
+
+// WHY I WROTE THIS
+function toggleWhy(el) {
+  var text = el.nextElementSibling;
+  if (text.classList.contains('show')) {
+    text.classList.remove('show');
+    el.innerHTML = '&#9656; Why I wrote this &#9656;';
+  } else {
+    text.classList.add('show');
+    el.innerHTML = '&#9660; Why I wrote this &#9660;';
+  }
+}
+
+// QUIZ
+var answers = {};
 function answer(qNum, value) {
   answers[qNum] = value;
   document.getElementById('q' + qNum).classList.remove('active');
@@ -622,80 +534,90 @@ function answer(qNum, value) {
 
 function showResult() {
   var scores = { happiness: 0, valleyfair: 0, salvager1: 0 };
-
   if (answers[1] === 'heartwarming') scores.happiness += 3;
   else if (answers[1] === 'smalltown') scores.valleyfair += 3;
   else if (answers[1] === 'adventure') scores.salvager1 += 3;
   else if (answers[1] === 'mystery') scores.salvager1 += 2;
-
   if (answers[2] === 'happiness') scores.happiness += 3;
   else if (answers[2] === 'ordinary') scores.valleyfair += 3;
   else if (answers[2] === 'secrets') { scores.salvager1 += 2; scores.valleyfair += 1; }
   else if (answers[2] === 'survival') scores.salvager1 += 3;
-
   if (answers[3] === 'standalone') { scores.happiness += 2; scores.valleyfair += 2; }
   else if (answers[3] === 'series') scores.salvager1 += 3;
   else { scores.happiness += 1; scores.valleyfair += 1; scores.salvager1 += 1; }
-
   if (answers[4] === 'short') scores.happiness += 2;
   else if (answers[4] === 'medium') { scores.valleyfair += 2; scores.happiness += 1; }
   else scores.salvager1 += 2;
-
+  
   var winner = 'happiness';
   var max = 0;
-  for (var key in scores) {
-    if (scores[key] > max) { max = scores[key]; winner = key; }
-  }
-
+  for (var key in scores) { if (scores[key] > max) { max = scores[key]; winner = key; } }
+  
   var books = {
-    happiness: {
-      title: 'Happiness Finds Big Man',
-      cover: 'https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/d88ad9ebf_happiness-finds-big-man.png',
-      desc: "A feel-good story about finding joy in unexpected places. Perfect for when you need a reminder that happiness comes in all sizes.",
-      link: 'https://books2read.com/u/4Nnw8G',
-      price: '$3.99'
-    },
-    valleyfair: {
-      title: 'Just Another Typical Day in Valley Fair',
-      cover: 'https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/cf5a926a2_4d4ec6ea3_Just-Another-Typical-Day-in-Valley-Fair-original.jpg',
-      desc: "Small town, big drama. A slice-of-life story that finds extraordinary depth in ordinary people. You'll laugh, you'll think, you'll see your own town differently.",
-      link: 'https://books2read.com/u/47APQg',
-      price: '$4.99'
-    },
-    salvager1: {
-      title: "The Salvager: The Sisters' Plea",
-      cover: 'https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/bcb204f95_410e0021d_TheSalvagerSeriesBook1_cover_corrected.jpg',
-      desc: "The start of an addictive adventure series. Two sisters, one desperate plea, and a salvager who can't walk away. You'll be hooked from page one.",
-      link: 'https://books2read.com/u/4XVjp7',
-      price: '$4.99'
-    }
+    happiness: { title: 'Happiness Finds Big Man', cover: 'https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/d88ad9ebf_happiness-finds-big-man.png', desc: "A feel-good story about finding joy in unexpected places. Perfect for when you need a reminder that happiness comes in all sizes.", link: 'https://books2read.com/u/4Nnw8G', price: '$3.99' },
+    valleyfair: { title: 'Just Another Typical Day in Valley Fair', cover: 'https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/cf5a926a2_4d4ec6ea3_Just-Another-Typical-Day-in-Valley-Fair-original.jpg', desc: "Small town, big drama. A slice-of-life story that finds extraordinary depth in ordinary people. You will laugh, you will think, you will see your own town differently.", link: 'https://books2read.com/u/47APQg', price: '$4.99' },
+    salvager1: { title: "The Salvager: The Sisters' Plea", cover: 'https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/bcb204f95_410e0021d_TheSalvagerSeriesBook1_cover_corrected.jpg', desc: "The start of an addictive adventure series. Two sisters, one desperate plea, and a salvager who can't walk away. You will be hooked from page one.", link: 'https://books2read.com/u/4XVjp7', price: '$4.99' }
   };
-
+  
   var book = books[winner];
   var card = document.getElementById('resultCard');
-  card.innerHTML = '<div class="result-label">Your Perfect Match</div>' +
-    '<img src="' + book.cover + '" alt="' + book.title + ' cover">' +
-    '<h3>' + book.title + '</h3>' +
-    '<p>' + book.desc + '</p>' +
-    '<a href="' + book.link + '" class="btn-buy" target="_blank" style="background:var(--navy);color:white;padding:12px 30px;border-radius:50px;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;display:inline-block;">Get it for ' + book.price + '</a>';
+  card.innerHTML = '<div class="result-label">Your Perfect Match</div><img src="' + book.cover + '" alt="' + book.title + '"><h3>' + book.title + '</h3><p>' + book.desc + '</p><a href="' + book.link + '" class="btn-buy" target="_blank" style="background:var(--navy);color:white;padding:12px 30px;border-radius:50px;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;display:inline-block;">Get it for ' + book.price + '</a>';
   document.getElementById('result').classList.add('active');
 }
 
 function restartQuiz() {
   answers = {};
-  for (var i = 1; i <= 4; i++) {
-    document.getElementById('q' + i).classList.remove('active');
-  }
+  for (var i = 1; i <= 4; i++) { document.getElementById('q' + i).classList.remove('active'); }
   document.getElementById('result').classList.remove('active');
   document.getElementById('q1').classList.add('active');
 }
 
+// EMAIL SIGNUP
+function subscribe(e) {
+  e.preventDefault();
+  var email = document.getElementById('emailInput').value;
+  var name = document.getElementById('nameInput').value;
+  var msg = document.getElementById('signupMsg');
+  
+  if (!email || !email.includes('@')) {
+    msg.className = 'signup-msg error';
+    msg.textContent = 'Please enter a valid email.';
+    return false;
+  }
+  
+  msg.className = 'signup-msg';
+  msg.textContent = 'Signing you up...';
+  
+  fetch('https://base44.app/api/apps/69b1cf645256e83c174a7c51/functions/subscribeEmail', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, name: name })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data.success) {
+      msg.className = 'signup-msg success';
+      msg.textContent = 'You are in! Watch your inbox for updates from Bob.';
+      document.getElementById('emailInput').value = '';
+      document.getElementById('nameInput').value = '';
+    } else {
+      msg.className = 'signup-msg error';
+      msg.textContent = data.error || 'Something went wrong. Please try again.';
+    }
+  })
+  .catch(function() {
+    msg.className = 'signup-msg error';
+    msg.textContent = 'Network error. Please try again.';
+  });
+  return false;
+}
+
+// SHARE
 function copyLink() {
   navigator.clipboard.writeText('https://resuter51-ops.github.io/author-landing/').then(function() {
     alert('Link copied! Share it anywhere.');
   });
 }
 </script>
-
 </body>
 </html>
