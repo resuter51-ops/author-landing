@@ -413,11 +413,11 @@
       <div class="quiz-progress">
         <div class="quiz-dot done"></div><div class="quiz-dot done"></div><div class="quiz-dot done"></div><div class="quiz-dot done"></div>
       </div>
-      <div class="quiz-question">What&#039;s your ideal reading length?</div>
+      <div class="quiz-question">How do you want to feel when you finish?</div>
       <div class="quiz-options">
-        <button class="quiz-option" onclick="answer(4, 'short')">Short and sweet &#8212; under 200 pages</button>
-        <button class="quiz-option" onclick="answer(4, 'medium')">Medium &#8212; a solid afternoon read</button>
-        <button class="quiz-option" onclick="answer(4, 'long')">Long and immersive &#8212; I want to live in it</button>
+        <button class="quiz-option" onclick="answer(4, 'warm')">Warm and hopeful</button>
+        <button class="quiz-option" onclick="answer(4, 'thoughtful')">Thoughtful and nostalgic</button>
+        <button class="quiz-option" onclick="answer(4, 'breathless')">Breathless and wanting more</button>
       </div>
     </div>
 
@@ -545,9 +545,9 @@ function showResult() {
   if (answers[3] === 'standalone') { scores.happiness += 2; scores.valleyfair += 2; }
   else if (answers[3] === 'series') scores.salvager1 += 3;
   else { scores.happiness += 1; scores.valleyfair += 1; scores.salvager1 += 1; }
-  if (answers[4] === 'short') scores.happiness += 2;
-  else if (answers[4] === 'medium') { scores.valleyfair += 2; scores.happiness += 1; }
-  else scores.salvager1 += 2;
+  if (answers[4] === 'warm') scores.happiness += 3;
+  else if (answers[4] === 'thoughtful') scores.valleyfair += 3;
+  else scores.salvager1 += 3;
   
   var winner = 'happiness';
   var max = 0;
