@@ -250,7 +250,7 @@
     <div class="hero-stats">
       <div class="stat"><div class="num">5</div><div class="label">Books</div></div>
       <div class="stat"><div class="num">3</div><div class="label">Series</div></div>
-      <div class="stat"><div class="num">$2.99</div><div class="label">Starting At</div></div>
+      <div class="stat"><div class="num">FREE</div><div class="label">Starting At</div></div>
     </div>
   </div>
 </div>
@@ -271,11 +271,11 @@
     <img class="book-cover" src="https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/d88ad9ebf_happiness-finds-big-man.png" alt="Happiness Finds Big Man">
     <div class="book-info">
       <div class="book-title">Happiness Finds Big Man</div>
-      <div class="book-price">$2.99</div>
+      <div class="book-price">FREE</div>
       <div class="book-desc">A big man with a big heart finds happiness in the most unexpected places. A feel-good story that proves joy doesn&#039;t care about your size, your situation, or what anyone else thinks.</div>
       <div class="book-buttons">
-        <button class="btn-buy" onclick="openPreview('happiness','Happiness Finds Big Man','https://bobsuniverse.love/b/q0DKv','$2.99')">Read Chapter 1 Free</button>
-        <a href="https://bobsuniverse.love/b/q0DKv" class="btn-buy" target="_blank" style="background:var(--gold);color:var(--dark);">Buy $2.99</a>
+        <button class="btn-buy" onclick="openPreview('happiness','Happiness Finds Big Man','https://bobsuniverse.love/b/q0DKv','FREE')">Read Chapter 1 Free</button>
+        <a href="https://bobsuniverse.love/b/q0DKv" class="btn-buy" target="_blank" style="background:var(--gold);color:var(--dark);">Get It Free</a>
       </div>
       <div class="why-toggle" onclick="toggleWhy(this)">&#9656; Why I wrote this &#9656;</div>
       <div class="why-text">This book is dedicated to my friend Angie Sanchez, who inspired the character Evie. I wanted to write a story about finding happiness when life puts you somewhere you didn&#039;t expect &#8212; something I know a thing or two about.</div>
@@ -554,7 +554,7 @@ function showResult() {
   for (var key in scores) { if (scores[key] > max) { max = scores[key]; winner = key; } }
   
   var books = {
-    happiness: { title: 'Happiness Finds Big Man', cover: 'https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/d88ad9ebf_happiness-finds-big-man.png', desc: "A feel-good story about finding joy in unexpected places. Perfect for when you need a reminder that happiness comes in all sizes.", link: 'https://bobsuniverse.love/b/q0DKv', price: '$2.99' },
+    happiness: { title: 'Happiness Finds Big Man', cover: 'https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/d88ad9ebf_happiness-finds-big-man.png', desc: "A feel-good story about finding joy in unexpected places. Perfect for when you need a reminder that happiness comes in all sizes.", link: 'https://bobsuniverse.love/b/q0DKv', price: 'FREE' },
     valleyfair: { title: 'Just Another Typical Day in Valley Fair', cover: 'https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/cf5a926a2_4d4ec6ea3_Just-Another-Typical-Day-in-Valley-Fair-original.jpg', desc: "Small town, big drama. A slice-of-life story that finds extraordinary depth in ordinary people. You will laugh, you will think, you will see your own town differently.", link: 'https://bobsuniverse.love/b/JQZ8A', price: '$3.99' },
     salvager1: { title: "The Salvager: The Sisters' Plea", cover: 'https://base44.app/api/apps/69b1cf645256e83c174a7c51/files/mp/public/69b1cf645256e83c174a7c51/bcb204f95_410e0021d_TheSalvagerSeriesBook1_cover_corrected.jpg', desc: "The start of an addictive adventure series. Two sisters, one desperate plea, and a salvager who can't walk away. You will be hooked from page one.", link: 'https://bobsuniverse.love/b/cbymu', price: '$3.99' }
   };
